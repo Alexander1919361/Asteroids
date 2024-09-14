@@ -1,5 +1,4 @@
 import pygame
-import random
 from constants import *
 from player import Player
 from asteroid import Asteroid
@@ -31,6 +30,11 @@ Screen height: 720""")
             thing.update(dt)
         for thing in drawable:
             thing.draw(screen)
+        for asteroid in asteroids:
+            if asteroid.check_collision(player):
+                print("Game over!")
+                pygame.quit()
+                return
         
         pygame.display.flip()
         
