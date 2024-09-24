@@ -40,7 +40,7 @@ Screen height: 720""")
                 return
             for shot in shots:
                 if asteroid.check_collision(shot):
-                    asteroid.kill()
+                    asteroid.split()
                     shot.kill()
         
         pygame.display.flip()
